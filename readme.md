@@ -16,11 +16,9 @@ In my project, because test labels are not provided for the KDD CUP test set, I 
 | **Random Forest** | 0.694 | 0.160 | 0.831 | 0.174 | 0.347 | 0.232 | 0.471 | 0.471 | 0.506 |
 | **Custom Tree** | 0.609 | 0.107 | 0.722 | 0.112 | 0.401 | 0.175 | 0.946 | 0.594 | 0.564 |
 
-As expected, **XGBoost** achieved the top performance with an **AUC of 0.726**. This score indicates that in roughly 73% of cases, the model correctly assigns a higher risk score to a churner than to a non-churner. The **Random Forest** followed at 0.694, while the **Custom Tree** reached 0.609. All models demonstrated a clear signal above the random baseline (AUC = 0.5). 
+As expected, **XGBoost** achieved the top performance with an **AUC of 0.726**. This score indicates that in roughly 73% of cases, the model correctly assigns a higher risk score to a churner than to a non-churner. The **Random Forest** classifier followed at 0.694, while the **Custom Tree** classifier reached 0.609. All models demonstrated a clear signal above the random baseline (AUC = 0.5). 
 
-Additionally, we prioritized **PR-AUC (Average Precision)**, which summarizes the precision-recall curve across all recall levels. Unlike ROC-AUC, this metric is often more informative for highly imbalanced datasets because it focuses specifically on the minority class (churners). Here, the performance gap widened: XGBoost led with 0.197, followed by Random Forest (0.160) and the Custom Tree (0.107).
-
-Two more strong measurements are precision and recall, combined into F1, which describe how often predicted churners are truly churners (**precision**) and how many of the total true churners we successfully caught (**recall**). The **F1** value shows the harmonic mean measurement of these two values. 
+Two additional key metrics are precision and recall, combined into F1, which describe how often predicted churners are truly churners (**precision**) and how many of the total true churners we successfully caught (**recall**). The **F1** value shows the harmonic mean measurement of these two values. 
 
 Note on LogLoss: The **Custom Tree** shows a high "Raw" LogLoss (0.946) because it was trained on a balanced dataset (50/50), causing it to predict probabilities around 0.5. However, after applying **probability calibration** (adjusting for the real class priors), its "Adjusted" LogLoss drops to 0.594, showing that the tree actually learned meaningful probabilities.
 
