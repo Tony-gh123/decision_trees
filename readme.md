@@ -2,7 +2,7 @@
 
 DATA: [KDD Cup 2009: Customer Relationship Prediction](https://kdd.org/kdd-cup/view/kdd-cup-2009/Data)
 
-This exploratory project investigates the efficiency of decision-tree-based methods for real-world churn prediction. Using customer data from the French telecom company Orange (KDD Cup 2009), I compared the performance of a custom Decision Tree, Random Forest, and XGBoost. The analysis addresses key challenges such as class imbalance and mixed data types to effectively identify churning customers. 
+This project investigates the efficacy of decision-tree algorithms on real-world churn prediction. Using customer data from the French telecom company Orange (KDD Cup 2009), I compared the performance of a custom Decision Tree, Random Forest, and XGBoost. The analysis addresses key challenges such as class imbalance and mixed data types to effectively identify churning customers. 
 
 The paper for the winners of this contest is here: [Winning the KDD Cup Orange Challenge with Ensemble Selection](https://proceedings.mlr.press/v7/niculescu09/niculescu09.pdf), their team used Ensemble Selection with 500-1000 individual models (including decision trees) to evaluate churn and achieved an impressive 0.7611 AUC Score in classifying churners. 
 
